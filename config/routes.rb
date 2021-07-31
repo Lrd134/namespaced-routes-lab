@@ -5,4 +5,12 @@ Rails.application.routes.draw do
   end
   resources :songs
 
+  namespace :admin do
+    resources :preferences do
+      resources :admins do 
+        resources :songs
+      end
+    end
+  end
+
 end
